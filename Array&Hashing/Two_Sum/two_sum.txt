@@ -1,0 +1,4 @@
+So instead of writing a nested loop to check the sum we just add a map and in that map we start adding
+the complement values so we dont have to get the value by looping again, we keep checking the complement 
+values on every loop and if it has that value we just return it.
+NOTE: we are saving the value as key and its position as its value inside the map
