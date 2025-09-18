@@ -1,0 +1,1 @@
+('this has the same approach as the first question of twoSums but instead of checking and making a map we just make a set and check on every looping element')
