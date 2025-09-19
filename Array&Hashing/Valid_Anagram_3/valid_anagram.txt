@@ -1,0 +1,1 @@
+used a map to save the key as its alphabet and value as its total number and checked and negated all the time we saw that value in the other word
