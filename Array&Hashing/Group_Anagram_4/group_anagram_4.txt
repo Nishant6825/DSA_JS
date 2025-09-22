@@ -1,0 +1,1 @@
+I used a map where i sorted every elements string and created an key, then i checked if that key exisit, if it does exist then i just push that element in that key's value if not then just create a key and add an element of array in it as its value

@@ -1,29 +1,18 @@
 var groupAnagrams = function (strs) {
-  const paramArray = strs;
-
-  if (new Set(paramArray).size <= 1) {
-    return [paramArray];
+  if (new Set(strs).size <= 1) {
+    return [strs];
   }
-  const resArray = [];
-  for (let i = 0; i < paramArray.length; i++) {
-    const sortedIItem = paramArray[i].split("").sort().join("");
-    const tempArr = [];
-    for (let j = i + 1; j < paramArray.length; j++) {
-      if (sortedIItem === paramArray[j].split("").sort().join("")) {
-        tempArr.push(paramArray[j]);
-        paramArray.splice(j, 1);
-        console.log("🚀 ~ groupAnagrams ~ paramArray:", paramArray);
-      }
+  const map = new Map();
+  for (let i = 0; i < strs.length; i++) {
+    const sortedStr = strs[i].split("").sort().join("");
+    if (map.has(sortedStr)) {
+      map.get(sortedStr).push(strs[i]);
+    } else {
+      map.set(sortedStr, [strs[i]]);
     }
-    console.log("temp", tempArr);
-    tempArr.push(paramArray[i]);
-    console.log("temp", tempArr);
-
-    resArray.push(tempArr);
-    console.log("resArray", resArray);
   }
-  return resArray;
+  return Array.from(map.values());
 };
 
-// console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
 console.log(groupAnagrams(["", "", ""]));
